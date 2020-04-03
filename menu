@@ -1,0 +1,34 @@
+#include <iostream>
+#include <stdlib.h>
+#include <locale.h>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    int valor;
+    cout << "Calculadora de bases" << endl;
+    cout << "Digite o número correspondente a calculadora que deseja utilizar e aperte ENTER:" << endl;
+    cout << "1- Binário para Decimal" << endl;
+    cout << "2- Decimal para Binário" << endl;
+
+    cin >> valor;
+    system("clear||cls");
+    if (valor == 1) {
+            int decimal, binario;
+            cout << "1- Conversão de Decimal para Binário " << endl;
+            cin >> decimal;
+            cout << endl << "O valor em binário é " << decimal << endl;
+    } else {
+        if(valor == 2) {
+            int binario, decimal;
+            cout << "2- Conversão de Binário para Decimal" << endl;
+            cin >> binario;
+            cout << endl << "O valor em decimal é " << binario << endl;
+            } else {
+                cout << "Você quis dizer 1 ou 2?" << endl;
+                }
+
+    return 0;
+}
+}
