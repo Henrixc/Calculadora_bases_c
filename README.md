@@ -1,2 +1,2 @@
 # hetschumi-gmail.com
-Calculadora_bases_C++
+Calculadora_bases_C
