@@ -1,0 +1,136 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <locale.h>
+#include <math.h>
+#include <windows.h>
+
+#define MAX 50
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese"); //permitir que utilize a linguagem em português
+
+    int opcao;
+
+    printf("Conversora de bases\n");
+    /*para que sempre apareça o menu toda vez que for feita a execução e possam ser feitar quantas conversões se quiser
+    tem um laço do.. while*/
+   do
+    {
+    printf("\nDigite a conversão que deseja executar: \n");
+    printf("1-Binário para Decimal\n");
+    printf("2-Decimal para Binário \n");
+    printf("3-Decimal para Octadecimal \n");
+    printf("4-Octadecimal para Decimal \n");
+    printf("5-Decimal para Hexadecimal \n");
+    printf("6-Hexadecimal para Decimal \n");
+    printf("0-Para sair\n");
+    scanf(" %d", &opcao);
+
+        if (opcao == 1)
+        {
+            system("cls"); //para que a tela seja limpa toda vez que for reiniciada a conversora
+
+            /* para melhor organizar as variáveis, visto que seriam diversos loops, as estratégias que
+            demandavam variáveis diferentes foram descritas dentro de cada IF*/
+            int i, rem, sum=0;
+            long int n;
+
+            printf ("Você está utilizando a conversão Binário para Decimal \n");
+            printf("Digite seu número binário: ");
+            scanf("%ld", &n);
+            i=0;
+
+            /*Enquanto a divisão do meu número por for maior que Zero, o laço seguinte se repete.
+            Ver forma de converter binario em decimal*/
+            while ( n > 0)
+            {
+                rem = n % 10;
+                sum = sum + rem * pow (2,i);
+                n = n/10;
+                i++;
+            }
+            printf ("Seu número em decimal é: %d\n", sum);
+            }
+        else
+            if (opcao == 2)
+            {
+                system("cls");
+                int decimal=0;
+                int vet_bin[MAX];
+                int aux_dec = decimal;
+                int i=0, j;
+
+                printf ("Você está utilizando a conversão Decimal para Binário \n");
+                printf("Digite seu número decimal:\n");
+                scanf("%d", &decimal);
+
+                while (decimal > 0)
+                {
+                    vet_bin[i] = decimal % 2;
+                    i++;
+                    decimal = decimal / 2;
+                }
+
+                printf ("Seu número em binário é: %d", aux_dec);
+                for (j = i - 1; j >= 0; j--) //como o modulo de decimal por 2 gera o número binário ao contrário, é preciso invert-lo
+                {
+                    printf ("%d", vet_bin[j]);
+                }
+                    printf ("\n");
+            }
+        else
+            /* A partir da opção de conversão de decimal para octal e hexadecimal, e seus complementares, foi utilizado
+            a impressão do número no formato pretendido.*/
+            if (opcao == 3)
+            {
+                int decimal;
+
+                system("cls");
+                printf ("Você está utilizando a conversão Decimal para Octal \n");
+                printf("Digite seu número decimal:\n");
+                scanf("%d", &decimal);
+                printf ("Seu número em octal é: \n");
+                printf("%o \n", decimal);
+            }
+        else
+            if (opcao == 4)
+            {
+                int octal;
+
+                system("cls");
+                printf ("Você está utilizando a conversão Octal para Decimal \n");
+                printf("Digite seu número octal:\n");
+                scanf("%o", &octal);
+                printf ("Seu número em decimal é: \n");
+                printf("%d \n", octal);
+            }
+        else
+            if (opcao == 5)
+            {
+                int decimal;
+
+                system("cls");
+                printf ("Você está utilizando a conversão Decimal para Hexadecimal \n");
+                printf("Digite seu número decimal:\n");
+                scanf("%d", &decimal);
+                printf ("Seu número em hexadecimal é: \n");
+                printf("%x", decimal);
+            }
+        else
+            if (opcao == 6)
+            {
+                int hexa;
+
+                system("cls");
+                printf("Você esta utilizando a conversão Hexadecimal para decimal \n");
+                printf("Digite seu número hexadecimal:\n");
+                scanf("%x", &hexa);
+                printf ("Seu número em decimal é: \n");
+                printf("%d \n", hexa);
+            }
+} while ( opcao || 0);
+
+return 0;
+}
