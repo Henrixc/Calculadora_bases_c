@@ -3,7 +3,6 @@
 #include <string.h>
 #include <locale.h>
 #include <math.h>
-#include <windows.h>
 
 #define MAX 50
 
@@ -93,6 +92,7 @@ int main()
                 scanf("%d", &decimal);
                 printf ("Seu número em octal é: \n");
                 printf("%o \n", decimal);
+                // %o imprime um numero em notação octal
             }
         else
             if (opcao == 4)
@@ -103,6 +103,7 @@ int main()
                 printf ("Você está utilizando a conversão Octal para Decimal \n");
                 printf("Digite seu número octal:\n");
                 scanf("%o", &octal);
+                // %o recebe um numero em notação octal
                 printf ("Seu número em decimal é: \n");
                 printf("%d \n", octal);
             }
@@ -117,6 +118,7 @@ int main()
                 scanf("%d", &decimal);
                 printf ("Seu número em hexadecimal é: \n");
                 printf("%x", decimal);
+                // %x imprime um numero em notação hexadecimal
             }
         else
             if (opcao == 6)
@@ -127,6 +129,7 @@ int main()
                 printf("Você esta utilizando a conversão Hexadecimal para decimal \n");
                 printf("Digite seu número hexadecimal:\n");
                 scanf("%x", &hexa);
+                // %o recebe um numero em notação hexadecimal
                 printf ("Seu número em decimal é: \n");
                 printf("%d \n", hexa);
             }
