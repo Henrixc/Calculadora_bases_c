@@ -41,8 +41,8 @@ int main()
             scanf("%ld", &n);
             i=0;
 
-            /*Enquanto a divisão do meu número por for maior que Zero, o laço seguinte se repete.
-            Ver forma de converter binario em decimal*/
+            //Enquanto a divisão do meu número por 10 for maior que Zero, o laço seguinte se repete.
+            // Por estar partindo de i=0, o número é construído na ordem correta
             while ( n > 0)
             {
                 rem = n % 10;
@@ -65,6 +65,8 @@ int main()
                 printf("Digite seu número decimal:\n");
                 scanf("%d", &decimal);
 
+                // Um número dividido por dois só pode ter dois restos possíveis, 1 ou 0. Enquanto o número foi
+                // maior que 0 (zero) o loop se repete.
                 while (decimal > 0)
                 {
                     vet_bin[i] = decimal % 2;
